@@ -4,7 +4,7 @@ pipeline {
        stage('build and Testing DEV'){
           steps{
             echo 'Build and Testing'
-            sh 'chmod 755 emirates/mvnw'
+            sh 'chmod 755 mvnw'
             sh './mvnw -Pdev clean verify'
           }
        }
