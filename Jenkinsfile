@@ -20,5 +20,11 @@ pipeline {
             sh './mvnw -Pprod clean verify'
           }
        }
+       stage('create Docker image'){
+          steps{
+            echo 'create docker image'
+            sh './mvnw -Pprod verify jib:dockerBuild'
+          }
+       }
     }
 }
