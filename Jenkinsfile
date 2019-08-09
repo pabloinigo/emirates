@@ -8,11 +8,10 @@ pipeline {
             sh './mvnw -Pdev clean verify'
           }
        }
-       stage('build and Testing'){
+       stage('SonarQube DEV'){
           steps{
-            echo 'Build and Testing'
-            sh 'chmod 755 emirates/mvnw'
-            sh './mvnw verify'
+            echo 'SonarQube DEV'
+            sh './mvnw -Pdev clean verify sonar:sonar'
           }
        }
     }
