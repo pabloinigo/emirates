@@ -17,4 +17,5 @@ sudo service docker start
 
 #Installing SonarQube
 sudo cp /tmp/docker-compose /etc/init.d/docker-compose
+sudo chmod 755 /etc/init.d/docker-compose
 sudo chkconfig docker-compose on

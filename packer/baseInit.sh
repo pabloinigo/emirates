@@ -21,3 +21,7 @@ sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum install jenkins -y
 sudo service jenkins start
 sudo usermod -a -G docker jenkins
+sudo mkdir -p /var/lib/jenkins/jobs/emirates
+sudo cp /tmp/config.xml /var/lib/jenkins/jobs/emirates/
+sudo mkdir /var/lib/jenkins/jobs/emirates/builds
+sudo chown -R jenkins:jenkins /var/lib/jenkins/

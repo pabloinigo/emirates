@@ -19,7 +19,9 @@ Pipeline is splited in 6 steps
 
 ![Pipeline](pipeline.png)
 
-After this execution our job will start the application in the jenkins server. I have not created a new instance to avoid install a artifactory repository ( Normally this is a step that we must to do ). Jenkins pipeline is saved in github and config.xml too to be able to recrete the job in the repository. I didn't setup copy of this XML file but it is only needed a new line in packer to do that.
+After this execution our job will start the application in the jenkins server. I have not created a new instance to avoid install a artifactory repository ( Normally this is a step that we must to do ). Jenkins pipeline is saved in github and config.xml too to be able to recrete the job in the repository. I setup the copy of this XML file, so after terraform recreation job will be always there. 
+
+I have not saved the completly Jenkins setup because was not in the exercise, that's mean that everytime that the insfrastructe is recreated we need to add again admin password and install plugins, but this can be easily fixed
 
 ### SonarQube instance
 
