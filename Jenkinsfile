@@ -26,5 +26,12 @@ pipeline {
             sh './mvnw -Pprod verify jib:dockerBuild'
           }
        }
+       stage('start container'){
+          steps{
+            echo 'start container'
+            sh 'docker-compose -f src/main/docker/app.yml up -d'
+	    sh 'docker ps'
+          }
+       }
     }
 }
