@@ -1,0 +1,45 @@
+{
+  "variables": {
+  "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+  "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+  "vpc_region": "eu-central-1",
+  "vpc_id": "vpc-85bd49ee",
+  "source_ami": "ami-026d3b3672c6e7b66",
+  "instance_type": "t2.micro",
+  "ssh_username": "ec2-user",
+  "ssh_keypair_name": "emirates",
+  "vpc_public_sg_id": "sg-0b62183b0bec6769b",
+  "vpc_public_sn_id": "subnet-9f24d9e2"
+},
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "{{user `vpc_region`}}",
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `vpc_public_sn_id`}}",
+      "associate_public_ip_address": true,
+      "security_group_id": "{{user `vpc_public_sg_id`}}",
+      "source_ami": "{{user `source_ami`}}",
+      "instance_type": "{{user `instance_type`}}",
+      "communicator": "ssh",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ami_name": "base-jenkins-docker-{{isotime \"2006-01-02-1504\"}}",
+      "ami_groups": "all"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "baseInit.sh"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "manifest",
+      "output": "manifest.json",
+      "strip_path": true
+    }
+  ]
+}
