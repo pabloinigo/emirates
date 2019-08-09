@@ -14,5 +14,11 @@ pipeline {
             sh './mvnw -Pdev clean verify sonar:sonar'
           }
        }
+       stage('create jar in Prod'){
+          steps{
+            echo 'create jar in Prod'
+            sh './mvnw -Pprod clean verify'
+          }
+       }
     }
 }
