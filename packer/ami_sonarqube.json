@@ -36,6 +36,11 @@
       "type": "file"
     },
     {
+      "destination": "/tmp/",
+      "source": "./startsonar.sh",
+      "type": "file"
+    },
+    {
       "type": "shell",
       "script": "baseInitsq.sh"
     }
