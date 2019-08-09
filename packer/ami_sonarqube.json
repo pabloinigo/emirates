@@ -37,7 +37,7 @@
     },
     {
       "destination": "/tmp/",
-      "source": "./startsonar.sh",
+      "source": "./docker-compose",
       "type": "file"
     },
     {

@@ -15,7 +15,7 @@ resource "aws_instance" "jenkins" {
   }
 }
 resource "aws_instance" "SonarQube" {
-  ami           = "ami-0d6d1720670c85115"
+  ami           = "ami-0b7407aab70a137c7"
   instance_type = "t2.medium"
   availability_zone = "eu-central-1b"
   key_name = "emirates"
