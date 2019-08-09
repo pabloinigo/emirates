@@ -43,3 +43,6 @@ There is a tf files that will deploy the complete infrastructure
 To simplify deployment there is a unique security group that allow to connect to port 22, 8080, 8081, 9091 in every machine from whatever place.
 
 
+### Application up
+
+![JHipster](welcome.png)
