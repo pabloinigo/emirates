@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "jenkins" {
-  ami           = "ami-0bec0e79bd8d06a68"
+  ami           = "ami-077614d5b46b0d188"
   instance_type = "t2.medium"
   availability_zone = "eu-central-1b"
   key_name = "emirates"
